@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Escrever algo sobre si mesmo é muito complicado :/
 
-### More Information
+### Quem sou?
 
-A place to include any other types of information that you'd like to include about yourself.
+Sou programador back-end e trabalho com Node JS, Rails, PHP, Java Web, PostgreSQL, MySQL, Mongo DB. Arrisco algo no front mas só no comportamento das páginas usando Angular 2+
 
-### Contact me
+### Entre em contato
 
-[email@domain.com](mailto:email@domain.com)
+[carloshmbtn@yahoo.com.br](mailto:carloshmbtn@yahoo.com.br)
