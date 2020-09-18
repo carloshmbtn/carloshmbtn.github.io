@@ -22,8 +22,8 @@ Theme1 = {
 	menuHover:			"orange",
 	menuClick:			"yellow",
 
-	seHover:			"demo/seHover",
-	seClick:			"demo/seClick",
+	seHover:			"",
+	seClick:			"",
 }
 
 Theme2 = {
