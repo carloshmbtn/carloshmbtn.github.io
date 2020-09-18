@@ -1,5 +1,6 @@
 start_chapter = [
 	label, "start_chapter",
+	preload, "auto",
 	cform, [ "top_menu", true,
 		button, {name:"Novo jogo", x:600, y:240, w:96, h:48, base:"rgba(255,165,0,0.8)", hover:"orange", click:"yellow", link:[jump, "intro"], tip:"Começar um novo jogo"}
 	],
