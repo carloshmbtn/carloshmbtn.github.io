@@ -28,3 +28,5 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 **[Capítulo 4 - Volume 1](/mangas/umisho/umisho4.pdf)**
 
 **[Capítulo 5 - Volume 1](/mangas/umisho/umisho5.pdf)**
+
+{% include disqus.html %}
