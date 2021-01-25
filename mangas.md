@@ -2,6 +2,7 @@
 layout: page
 title: Mangás
 permalink: /mangas/
+og: /images/og/manga-og.jpg
 ---
 
 Aqui vou publicando os mangás que vou traduzindo (no momento somente um de 130 capítulos)
