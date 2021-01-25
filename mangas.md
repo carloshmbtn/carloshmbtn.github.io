@@ -14,10 +14,10 @@ Mangá Kenkoo Zenrakei Suieibu Umishou em Português do Brasil, tradução feita
 
 O protagonista é o estudante Kaname que não consegue nadar, mas misteriosamente é o administrador do clube de natação formato por 5 rapazes e 12 garotas. Um dia Kaname vai para a praia ver uma estranha casa em cima de uma balsa, e chegando ao local, conhece uma misteriosa garota chamada Ninagawa Amuro, boa de natação que pretende estudar no mesmo colégio de Kaname.
 
-**Ação **
-**Comédia **
-**Harém **
-**Romance **
+**Ação** 
+**Comédia** 
+**Harém** 
+**Romance**
 
 **[Capítulo 1 - Volume 1](/mangas/umisho/umisho1.pdf)**
 
