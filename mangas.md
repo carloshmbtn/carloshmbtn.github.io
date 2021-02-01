@@ -20,16 +20,16 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 **Harém** 
 **Romance**
 
-**[Capítulo 1 - Volume 1](/mangas/umisho/umisho1.pdf)**
+**[Capítulo 1 - Volume 1](/mangas/umisho/umisho1.pdf){:target="_blank"}**
 
-**[Capítulo 2 - Volume 1](/mangas/umisho/umisho2.pdf)**
+**[Capítulo 2 - Volume 1](/mangas/umisho/umisho2.pdf){:target="_blank"}**
 
-**[Capítulo 3 - Volume 1](/mangas/umisho/umisho3.pdf)**
+**[Capítulo 3 - Volume 1](/mangas/umisho/umisho3.pdf){:target="_blank"}**
 
-**[Capítulo 4 - Volume 1](/mangas/umisho/umisho4.pdf)**
+**[Capítulo 4 - Volume 1](/mangas/umisho/umisho4.pdf){:target="_blank"}**
 
-**[Capítulo 5 - Volume 1](/mangas/umisho/umisho5.pdf)**
+**[Capítulo 5 - Volume 1](/mangas/umisho/umisho5.pdf){:target="_blank"}**
 
-**[Capítulo 6 - Volume 1](https://www.mediafire.com/file/yqrst0vicyrwl8q/umisho6.pdf/file)**
+**[Capítulo 6 - Volume 1](https://www.mediafire.com/file/yqrst0vicyrwl8q/umisho6.pdf/file){:target="_blank"}**
 
 {% include disqus.html %}
