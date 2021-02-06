@@ -32,4 +32,6 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 
 **[Capítulo 6 - Volume 1](https://www.mediafire.com/file/yqrst0vicyrwl8q/umisho6.pdf/file){:target="_blank"}**
 
+**[Capítulo 7 - Volume 1](https://www.mediafire.com/file/9ime0hrca210tr7/umisho7.pdf/file){:target="_blank"}**
+
 {% include disqus.html %}
