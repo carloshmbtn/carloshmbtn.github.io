@@ -2,7 +2,7 @@
 layout: page
 title: Mangás - Umisho PT-BR
 permalink: /mangas/
-og: /images/og/manga-og.jpg
+og: https://carloshmbtn.github.io/images/og/manga-og.jpg
 metaDescription: Mangá Umisho traduzido em português do Brasil. Título completo - Kenkoo Zenrakei Suieibu Umishou
 ---
 
