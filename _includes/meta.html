@@ -5,6 +5,7 @@
     
     {% if page.metaDescription %}
     <meta name="description" content="{{page.metaDescription}}">
+    <meta property="og:description" content="{{page.metaDescription}}" />
     {% else %}
     {% if page.excerpt %}
     <meta name="description" content="{{ page.excerpt| strip_html }}" />
