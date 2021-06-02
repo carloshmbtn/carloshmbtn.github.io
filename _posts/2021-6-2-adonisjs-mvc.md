@@ -43,7 +43,7 @@ Caso você abra o arquivo em **app/Http/routes.js** (que é onde o framework con
 
 Trecho de código:
 
-```
+```js
 const Route = use('Route')
  
 Route.on('/').render('welcome')
@@ -51,7 +51,7 @@ Route.on('/').render('welcome')
 
 Poderíamos alterar esse código da seguinte maneira:
 
-``` 
+```js
 const Route = use('Route')
  
 Route.get('/', 'IndexController.index')
@@ -69,7 +69,7 @@ Rode **./ace make:controller IndexController**. Será feito um questionamento a 
 
 O código que temos dentro de nosso arquivo é o seguinte:
 
-```
+```js
 'use strict'
  
 class IndexController {
@@ -81,7 +81,7 @@ module.exports = IndexController
 
 Como podemos ver, a estrutura está pronta, nos resta implementar a função **index** que tratará a requisição. Definimos essa função da seguinte forma:
 
-```
+```js
 * index(request, response){
  
 }
@@ -89,7 +89,7 @@ Como podemos ver, a estrutura está pronta, nos resta implementar a função **i
 
 A sintaxe não é muito diferente da que temos no Express Js por exemplo, recebemos um objeto que tem informações da requisição, e outro com uma referência para a resposta. Um método que podemos usar da response por exemplos é o **send** que simplesmente retorna algo estático para o cliente. Exemplo:
 
-```
+```js
 * index(request, response){
     response.send('Olá mundo!!!');
 }
@@ -104,7 +104,7 @@ Por padrão o Adonis Js vem configurado para renderizar view com o Nunjucks (da 
 Laço for:
 
 {%raw%}
-```
+```njk
 {% for i in algumVetor %}
 Acesse i via {{i}} ou via {{i.algo}} se for um objeto
 {% endfor %} 
@@ -114,7 +114,7 @@ Acesse i via {{i}} ou via {{i.algo}} se for um objeto
 Acesso a variável:
 
 {%raw%}
-```
+```njk
 {{var}} ou via {{obj.algo}}
 ```
 {%endraw%}
@@ -122,7 +122,7 @@ Acesso a variável:
 If: 
 
 {%raw%}
-```
+```njk
 {% if condicao %}
 entrou no if
 {% else %}
@@ -143,7 +143,7 @@ Como saída temos o local do arquivo novamente.
 
 Voltando a nossa controller, podemos alterará-la da seguinte forma:
 
-``` 
+```js
 'use strict'
  
 class IndexController {
@@ -164,7 +164,7 @@ Dessa forma poderemos percorrer o vetor em nossa view. **yield** deve ser usado 
 Agora escrevemos o for em nossa view:
 
 {%raw%}
-``` 
+```njk
 {% for v in vetor %}
  
 {{v}}
