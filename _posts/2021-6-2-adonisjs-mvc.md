@@ -103,20 +103,25 @@ Por padrão o Adonis Js vem configurado para renderizar view com o Nunjucks (da 
 
 Laço for:
 
+{%raw%}
 ```
 {% for i in algumVetor %}
 Acesse i via {{i}} ou via {{i.algo}} se for um objeto
 {% endfor %} 
 ```
+{%endraw%}
 
 Acesso a variável:
 
+{%raw%}
 ```
 {{var}} ou via {{obj.algo}}
 ```
+{%endraw%}
 
 If: 
 
+{%raw%}
 ```
 {% if condicao %}
 entrou no if
@@ -124,6 +129,7 @@ entrou no if
 entrou no else
 {% endif %} 
 ```
+{%endraw%}
 
 ### Criar view via cli
 
@@ -157,6 +163,7 @@ Dessa forma poderemos percorrer o vetor em nossa view. **yield** deve ser usado 
 
 Agora escrevemos o for em nossa view:
 
+{%raw%}
 ``` 
 {% for v in vetor %}
  
@@ -164,5 +171,6 @@ Agora escrevemos o for em nossa view:
  
 {% endfor %}
 ``` 
+{%endraw%}
 
 Com isso, ao acessar a /, temos a impressão de cada um dos elementos adicionados no vetor pela controller. Por enquanto vimos dois pilares (controller e view), o terceiro podemos ver em um post em separado em breve. Por enquanto, dê uma olhada na [documentação oficial](https://adonisjs.com/docs/3.2/overview).
