@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adonis Js MVC
+cover: https://carloshmbtn.github.io/images/posts/adonis/adonis-logo.png
 ---
 
 Construir uma aplicação demanda de tempo e um certo nível de estudo acerca de toda a arquitetura dessa aplicação, não somente por causa de trabalho em equipe (onde todos precisam conhecer muito bem o código) mas também por questões de desempenho, manutenibilidade e etc.
