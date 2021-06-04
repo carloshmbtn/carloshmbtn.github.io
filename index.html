@@ -12,7 +12,7 @@ layout: default
         {{ post.excerpt }}
         {% if post.cover %}
         <a href="{{ site.baseurl }}{{ post.url }}">
-          <img src="{{post.cover}}" alt="{{post.title}}"/>
+          <img style="width: 100%; height: auto;" src="{{post.cover}}" alt="{{post.title}}"/>
         </a>
         {% endif %}
       </div>
