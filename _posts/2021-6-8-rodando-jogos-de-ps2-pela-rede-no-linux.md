@@ -4,9 +4,6 @@ title: Rodando jogos de PS2 pela rede no Linux - Parte 1
 cover: https://carloshmbtn.github.io/images/posts/ps2opl/cover.png
 ---
 
-
-### Introdução
-
 Muitas pessoas gostariam de voltar a jogar seus jogos favoritos de PS2, mas como todos sabem esse console foi campeão de pirataria aqui no Brasil, sendo amplamente vendido já destravado e com isso rodando os famosos jogos piratas, que nada mais são que os arquivos do jogo gravados em uma mídia genérica.
 
 Esses jogos por serem gravados em larga escala ou por serem gravados por alguém sem os conhecimentos necessários para tal feito, acabavam com o tempo danificando a unidade óptica do videogame que é responsável por ler os jogos. Isso faz com que hoje em dia essas pessoas que gostariam de jogar PS2 não consigam.
