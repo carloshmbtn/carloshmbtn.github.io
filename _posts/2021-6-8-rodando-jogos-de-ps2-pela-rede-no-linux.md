@@ -69,3 +69,5 @@ sudo systemctl restart smbd
 ```
 
 Agora temos que começar as configurações da placa de rede, mas isso veremos em uma segunda parte postada posteiromente, assim que ela estiver pronta ela será linkada logo abaixo. Vlw e até a próxima. 
+
+[Parte 2](https://carloshmbtn.github.io/rodando-jogos-de-ps2-pela-rede-no-linux-parte2/)
