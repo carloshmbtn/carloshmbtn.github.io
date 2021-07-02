@@ -1,0 +1,124 @@
+
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Canais e contato - carloshmbtn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+        <link rel="icon" type="image/png" href="/images/favicon-96x96.png">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									
+								</nav>
+
+						</div>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Acompanhe minhas lives em sua plataforma favorita</h1>
+								
+							</header>
+							<section class="tiles">
+								<article class="style2">
+									<span class="image">
+										<img src="assets/images/twitch.png" alt="" />
+									</span>
+									<a href="https://www.twitch.tv/carloshmbtn">
+										<h2></h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="assets/images/youtube.png" alt="" />
+									</span>
+									<a href="https://www.youtube.com/c/CarlosRobertoCórdoba">
+										<h2></h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="assets/images/facebook.png" alt="" />
+									</span>
+									<a href="https://www.facebook.com/carloshmbtn/">
+										<h2></h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+
+                                <article class="style2">
+									<span class="image">
+										<img src="assets/images/trovo.png" alt="" />
+									</span>
+									<a href="https://trovo.live/carloshmbtn">
+										<h2></h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Redes sociais</h2>
+								<ul class="icons">
+									
+									<li><a href="https://www.facebook.com/carloshmbtn/" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/carlos.cdb/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/carloshmbtn" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									
+								</ul>
+							</section>
+							
+							<ul class="copyright">
+								<li>&copy; Carlos Roberto Córdoba. Todos os direitos reservados.</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
