@@ -16,3 +16,5 @@ permalink: /vs/
 
 <iframe src="https://carloshmbtn.github.io/visualnovel/index.html" class="responsive-iframe">
 </iframe>
+
+{% include disqus.html %}
