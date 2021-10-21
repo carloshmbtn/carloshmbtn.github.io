@@ -61,6 +61,15 @@ browseable = yes
     public = yes
     available = yes
 ```
+**Update: em algumas versões mais recentes do Samba podemos ter o erro "301: cannot log into SMB server" mesmo com as configurações comentadas aqui, nesse caso adicione as seguintes linhas após "dns proxy = no":**
+
+
+```
+max protocol = NT1
+min protocol = CORE
+ntlm auth = yes
+```
+
 Note que onde temos /home/carlos, **carlos** deve ser trocado pelo seu usuário. Em caso de dúvida abra o terminal e digite **pwd** que vai exibir o nome da pasta do seu usuário (diretório corrente).
 
 Feito isso vamos salvar o arquivo (apertando **ESC** no teclado, digitando **:wq** e logo depois **y** e apertando **enter**) e reiniciar o Samba com o comando: 
