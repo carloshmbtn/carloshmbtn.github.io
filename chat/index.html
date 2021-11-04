@@ -105,15 +105,15 @@
     <li>carregando…</li>
 </ul>
 
-<form action="https://api-carlos.000webhostapp.com/chat/index.php" method="post" >
-    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+<form autocomplete="off" action="https://api-carlos.000webhostapp.com/chat/index.php" method="post" >
+    
     <p>
-        <input type="text" name="content" id="content" autocomplete="chrome-off" />
+        <input type="text" name="content" id="content" autocomplete="none" />
     </p>
     <p>
         <label>
             Nome:
-            <input type="text" name="name" id="name" value="Anonymous" />
+            <input type="text" name="name" id="name" value="Anonymous" autocomplete="none" />
         </label>
         <button type="submit">Enviar</button>
     </p>
