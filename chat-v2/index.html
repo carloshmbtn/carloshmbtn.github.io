@@ -12,6 +12,18 @@
 
 
     <script type="text/javascript">
+
+        function isUrl(url){
+            return /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(url)
+        }
+
+        function formatUrl(url){
+            if(url.indexOf('http:') == -1 && url.indexOf('https:') == -1){
+                url = 'https://'+url;
+            }
+            return url;
+        }
+
         // <![CDATA[
         $(document).ready(function(){
             // Remove the "loading…" list entry
@@ -72,6 +84,10 @@
                                     .append(
                                         $('<span/>').text(date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()+ " ").append($('<strong/>').text(msg.name))
                                     ),
+
+                                    isUrl(msg.content) ? 
+                                    $('<div class="message other-message float-right"/>').append($('<a target="_blank" href="'+formatUrl(msg.content)+'">'+msg.content+'<a/>')) :
+
                                     $('<div class="message other-message float-right"/>').text(msg.content)
                                 )
                             .appendTo('ul.m-b-0')
