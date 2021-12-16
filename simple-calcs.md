@@ -21,11 +21,11 @@ permalink: /simple-calcs/
         let b = document.getElementById("b");
         let c = document.getElementById("c");
 
-        if(a.value == undefined || b.value == undefined || c.value == undefined){
+        if(isNaN(a.value) || isNaN(b.value) || isNaN(c.value)){
             return;
         }
 
-        document.getElementById("d").textContent = (b.value * c.value)/(a.value)
+        document.getElementById("d").textContent = ((b.value * c.value)/(a.value)).toFixed(2)
     }
 </script>
 
