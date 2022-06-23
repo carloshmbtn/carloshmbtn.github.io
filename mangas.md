@@ -37,6 +37,8 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 
 **[Capítulo 8 - Volume 1](http://www.mediafire.com/file/11kf3hk9vrw4w8w/umisho8.pdf/file){:target="_blank"}**
 
+**[Capítulo 9 - Volume 1](https://www.mediafire.com/file/u1uou5oy8ian2ru/umisho9.pdf/file){:target="_blank"}**
+
 ### Compre qualquer produto pelo link abaixo e contribua com a conclusão desse projeto
 
 **[Loja parceira Magazine Luiza](https://www.magazinevoce.com.br/magazinevocesonline/){:target="_blank"}**
