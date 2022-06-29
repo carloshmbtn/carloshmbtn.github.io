@@ -41,6 +41,8 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 
 **[Capítulo 10 - Volume 1](https://www.mediafire.com/file/15e1z31mwgq3hqj/umisho10.pdf/file){:target="_blank"}**
 
+**[Capítulo 11 - Volume 1](https://www.mediafire.com/file/xtz0dp9bblpf0ru/umisho11.pdf/file){:target="_blank"}**
+
 ### Compre qualquer produto pelo link abaixo e contribua com a conclusão desse projeto
 
 **[Loja parceira Magazine Luiza](https://www.magazinevoce.com.br/magazinevocesonline/){:target="_blank"}**
