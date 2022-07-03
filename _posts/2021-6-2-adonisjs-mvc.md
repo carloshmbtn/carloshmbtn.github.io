@@ -2,6 +2,7 @@
 layout: post
 title: Adonis Js MVC
 cover: https://carloshmbtn.github.io/images/posts/adonis/adonis-logo.png
+metaDescription: Esse framework pode não ser um dos mais famosos que você vai encontrar por ai, mas ele resolve bem o problema da necessidade de uma porção de código funcional na linguagem JavaScript.
 ---
 
 Construir uma aplicação demanda de tempo e um certo nível de estudo acerca de toda a arquitetura dessa aplicação, não somente por causa de trabalho em equipe (onde todos precisam conhecer muito bem o código) mas também por questões de desempenho, manutenibilidade e etc.
