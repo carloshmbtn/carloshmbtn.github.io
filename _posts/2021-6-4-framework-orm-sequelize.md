@@ -2,9 +2,10 @@
 layout: post
 title: Framework ORM Sequelize
 cover: https://carloshmbtn.github.io/images/posts/sequelize/cover.png
+metaDescription: Gravei esse vídeo há um tempo, mostrei um pouco a respeito do Sequelize, um framework ORM para Javascript. Foi uma ferramenta muito útil, além de usar em alguns 
 ---
 
-Gravei esse vídeo a um tempo, mostrei um pouco a respeito do Sequelize, um framework ORM para Javascript. Foi uma ferramenta muito útil, além de usar em alguns trabalhos da universidade, usei em alguns produtos (que na verdade também eram para a UFMS)
+Gravei esse vídeo há um tempo, mostrei um pouco a respeito do Sequelize, um framework ORM para Javascript. Foi uma ferramenta muito útil, além de usar em alguns trabalhos da universidade, usei em alguns produtos (que na verdade também eram para a UFMS)
 
 
 Abaixo, o vídeo em questão:

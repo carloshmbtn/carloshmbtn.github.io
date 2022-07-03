@@ -2,6 +2,7 @@
 layout: post
 title: Rodando jogos de PS2 pela rede no Linux - Parte 2
 cover: https://carloshmbtn.github.io/images/posts/ps2opl/cover.png
+metaDescription: No console em sua versão FAT uma boa alternativa seria adicionar um disco rígido IDE, executando os jogos em uma velocidade bem acima da original. No slim temos essa opção mostrada aqui
 ---
 
 Voltando ao nosso tutorial, vamos configurar nossa conexão de rede cabeada para que o playstation 2, por meio do OPL, consiga encontrar o compartilhamento **ps2opl** que criamos. Para isso, vamos deixar a configuração da conexão dessa forma: 

@@ -2,6 +2,7 @@
 layout: post
 title: Rodando jogos de PS2 pela rede no Linux - Parte 1
 cover: https://carloshmbtn.github.io/images/posts/ps2opl/cover.png
+metaDescription: No console em sua versão FAT uma boa alternativa seria adicionar um disco rígido IDE, executando os jogos em uma velocidade bem acima da original. No slim temos essa opção mostrada aqui
 ---
 
 Muitas pessoas gostariam de voltar a jogar seus jogos favoritos de PS2, mas como todos sabem esse console foi campeão de pirataria aqui no Brasil, sendo amplamente vendido já destravado e com isso rodando os famosos jogos piratas, que nada mais são que os arquivos do jogo gravados em uma mídia genérica.
