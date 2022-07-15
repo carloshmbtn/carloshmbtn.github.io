@@ -8,6 +8,7 @@ layout: default
     <article class="post">
 
       <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <p style="font-size: 12px;">Publicado {{ post.date | date: "%d/%m/%Y" }}</p>
 
       <div class="entry">
         {{ post.excerpt }}
