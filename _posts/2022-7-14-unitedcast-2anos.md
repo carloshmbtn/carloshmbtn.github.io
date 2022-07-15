@@ -7,7 +7,7 @@ metaDescription: Há vários anos atrás eu acompanhava o unitedcast, que tinha 
 
 Há vários anos atrás eu acompanhava um podcast (na época onde o lançamento principal e final era realmente em áudio) que tinha um diferencial interessante: As gravações brutas dos episódios eram feitas ao vivo, algo que eu não via naquela época (quem diria que isso se tornaria febre hoje em dia).  Seu tema principal era (e ainda é, logicamente) sobre animes, trazendo sempre conteúdos pautados (quer dizer, as vezes não) que eram debatidos entre os podcasters, sempre dando espaço para audiência no episódio seguinte através da leitura de emails. 
 
-# De volta ao passado do Unitedcast, mais precisamente 1 década atrás
+## De volta ao passado do Unitedcast, mais precisamente 1 década atrás
 
 Pra mim acompanhar isso era algo extremamente mágico. Apesar de nunca ter interagido com a equipe por meio de comentários no site ([AnimeUnited - UNITEDCast](https://www.animeunited.com.br/unitedcast/)) ou por meio de emails, eu sentia uma alegria indescritível. Nessa época eu passava literalmente horas de fone ouvindo esse (e outros) podcast simplesmente rindo, curtindo muito mesmo. Atualmente provavelmente não consigo mais algo desse tipo, com o "upgrade" dos podcasts para o formato principal em vídeo eu acabo deixando o episódio correndo e com o player float (praticamente padrão nos browsers atuais) enquanto estou trabalhando, é um outro momento, parece que a "mágica" acabou. 
 
