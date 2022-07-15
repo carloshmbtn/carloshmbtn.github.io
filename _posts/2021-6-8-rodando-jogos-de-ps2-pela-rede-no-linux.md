@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rodando jogos de PS2 pela rede no Linux - Parte 1
-cover: https://carloshmbtn.github.io/images/posts/ps2opl/cover.png
+cover: https://carloshmbtn.github.io/images/posts/ps2opl/cover2.png
 metaDescription: No console em sua versão FAT uma boa alternativa seria adicionar um disco rígido IDE, executando os jogos em uma velocidade bem acima da original. No slim temos essa opção mostrada aqui
 ---
 
