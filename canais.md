@@ -45,7 +45,7 @@
 									<span class="image">
 										<img src="assets/images/twitch.png" alt="" />
 									</span>
-									<a href="https://www.twitch.tv/carloshmbtn">
+									<a href="https://www.twitch.tv/carloshmbtn" title="twitch">
 										<h2></h2>
 										<div class="content">
 											<p></p>
@@ -56,7 +56,7 @@
 									<span class="image">
 										<img src="assets/images/youtube.png" alt="" />
 									</span>
-									<a href="https://www.youtube.com/c/CarlosRobertoCórdoba">
+									<a href="https://www.youtube.com/c/CarlosRobertoCórdoba" title="youtube">
 										<h2></h2>
 										<div class="content">
 											<p></p>
@@ -67,7 +67,7 @@
 									<span class="image">
 										<img src="assets/images/facebook.png" alt="" />
 									</span>
-									<a href="https://www.facebook.com/carloshmbtn/">
+									<a href="https://www.facebook.com/carloshmbtn/" title="facebook">
 										<h2></h2>
 										<div class="content">
 											<p></p>
@@ -79,7 +79,7 @@
 									<span class="image">
 										<img src="assets/images/trovo.png" alt="" />
 									</span>
-									<a href="https://trovo.live/carloshmbtn">
+									<a href="https://trovo.live/carloshmbtn" title="trovo">
 										<h2></h2>
 										<div class="content">
 											<p></p>
@@ -98,9 +98,9 @@
 								<h2>Redes sociais</h2>
 								<ul class="icons">
 									
-									<li><a href="https://www.facebook.com/carloshmbtn/" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/carlos.cdb/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/carloshmbtn" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a title="facebook" href="https://www.facebook.com/carloshmbtn/" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a title="instagram" href="https://www.instagram.com/carlos.cdb/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a title="github" href="https://github.com/carloshmbtn" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 									
 								</ul>
 							</section>

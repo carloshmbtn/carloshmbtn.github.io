@@ -11,7 +11,7 @@ Construir uma aplicação demanda de tempo e um certo nível de estudo acerca de
 
 Mas mesmo com tudo isso, o propósito aqui não é apresentar o MVC, e sim um framework que traz uma arquitetura MVC, o Adonis Js.
 
-![adonis logo](/images/posts/adonis/adonis-logo.png)
+![adonis logo](/images/posts/adonis/adonis-logo.png "logo do projeto Adonis")
 
 Esse framework pode não ser um dos mais famosos que você vai encontrar por ai, mas ele resolve bem o problema da necessidade de uma porção de código funcional na linguagem JavaScript. Sem mais enrolação, vamos ver como iniciar um projeto, e fazer nosso primeiro CRUD (pra quem não lembra é “Criar, Ler, Atualizar e Deletar”).
 
@@ -175,4 +175,4 @@ Agora escrevemos o for em nossa view:
 {%endraw%}
 ``` 
 
-Com isso, ao acessar a /, temos a impressão de cada um dos elementos adicionados no vetor pela controller. Por enquanto vimos dois pilares (controller e view), o terceiro podemos ver em um post em separado em breve. Por enquanto, dê uma olhada na [documentação oficial](https://adonisjs.com/docs/3.2/overview).
+Com isso, ao acessar a /, temos a impressão de cada um dos elementos adicionados no vetor pela controller. Por enquanto vimos dois pilares (controller e view), o terceiro podemos ver em um post em separado em breve. Por enquanto, dê uma olhada na [documentação oficial](https://adonisjs.com/docs/3.2/overview "documentação projeto Adonis").

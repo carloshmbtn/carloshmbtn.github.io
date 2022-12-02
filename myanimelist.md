@@ -4,7 +4,7 @@ title: Lista de Animes
 permalink: /myanimelist/
 ---
 
-Redirecionando para <a href="https://myanimelist.net/animelist/carloshmbtn">animelist/carloshmbtn</a>...
+Redirecionando para <a href="https://myanimelist.net/animelist/carloshmbtn" title="conta MyAnime List">animelist/carloshmbtn</a>...
 
 <script>
     setTimeout(()=> {

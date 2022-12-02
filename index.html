@@ -7,19 +7,19 @@ layout: default
   {% for post in site.posts %}
     <article class="post">
 
-      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title}}">{{ post.title }}</a></h2>
       <p style="font-size: 12px;">Publicado {{ post.date | date: "%d/%m/%Y" }}</p>
 
       <div class="entry">
         {{ post.excerpt }}
         {% if post.cover %}
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          <img style="width: 100%; height: auto;" src="{{post.cover}}" alt="{{post.title}}"/>
+        <a href="{{ site.baseurl }}{{ post.url }}" title="{{post.title}}">
+          <img style="width: 100%; height: auto;" src="{{post.cover}}" alt="{{post.title}}" title="{{post.title}}"/>
         </a>
         {% endif %}
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leia Mais</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" title="{{post.title}}" class="read-more">Leia Mais</a>
     </article>
   {% endfor %}
 </div>
