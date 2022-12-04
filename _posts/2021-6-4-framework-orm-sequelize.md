@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Framework ORM Sequelize
+og: https://carloshmbtn.github.io/images/posts/sequelize/cover.png
 cover: https://carloshmbtn.github.io/images/posts/sequelize/cover.png
 metaDescription: Gravei esse vídeo há um tempo, mostrei um pouco a respeito do Sequelize, um framework ORM para Javascript. Foi uma ferramenta muito útil, além de usar em alguns 
 ---

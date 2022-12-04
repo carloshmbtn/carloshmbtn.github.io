@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Unitedcast aniversário 2 anos - áudio do ao vivo
+og: https://carloshmbtn.github.io/images/posts/united/united-capa.png
 cover: https://carloshmbtn.github.io/images/posts/united/united-capa.png
 metaDescription: Há vários anos atrás eu acompanhava o unitedcast, que tinha um diferencial interessante, as gravações brutas dos episódios eram feitas ao vivo
 ---
