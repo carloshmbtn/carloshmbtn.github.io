@@ -1,11 +1,5 @@
 {
   "names": {
     "carloshmbtn": "13420d90aff53a072d4794e3cccb6c94a4fd73e15c47fec6a55f006e62e82d48"
-  },
-  "relays": {
-    "13420d90aff53a072d4794e3cccb6c94a4fd73e15c47fec6a55f006e62e82d48": [
-      "wss://nostr-pub.wellorder.net",
-      "wss://nostr-verified.wellorder.net"
-    ]
   }
 }
