@@ -68,8 +68,10 @@
       let all = [];
       test.onmessage = (event) => {
         let encoded = JSON.parse(event.data);
-
-        if (encoded.length >= 3 && encoded[2].kind == 1 && encoded[2].tags.length == 0) {
+        
+        if (encoded.length >= 3 && encoded[2].kind == 1 && (encoded[2].tags.length == 0 || 
+          !encoded[2].tags.find((t) => !t.startsWith("#"))
+        )) {
           all.push(encoded[2]);
         }
         if (encoded[0] == "EOSE") {
