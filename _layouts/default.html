@@ -1,65 +1,175 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-    
-    {% include meta.html %}
 
-    <!--[if lt IE 9]>
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+  {% include meta.html %}
+
+  <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon-96x96.png">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon-96x96.png">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
 
-    {% if page.og %}<meta property="og:image" content="{{ page.og}}">{% endif %}
+  {% if page.og %}
+  <meta property="og:image" content="{{ page.og}}">{% endif %}
+  {% if page.isNostr %}
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>{% endif %}
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEJTM44ZP4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  {% if page.isNostr %}
+  <script>
 
-      gtag('config', 'G-WEJTM44ZP4');
-    </script>
+    function isImage(url){
+      let images = ["jpg", "jpeg", "png", "gif"];
+      return !!images.find((i) => url.toLowerCase().endsWith("."+i));
+    }
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+    function getElements(rawText) {
+      try {
+        let lines = rawText.split("\n");
+        let elements = [];
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a title="página inicial" href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" alt="meu avatar no site" title="meu avatar no site" /></a>
+        for (let line of lines) {
+          let parts = line.split(" ");
+          let text = '';
+          for (let p of parts) {
+            if (p.indexOf('https://') == -1) {
+              text += p + " ";
+            }
+            if (p.indexOf('https://') > -1 && isImage(p)) {
+              elements.push({ type: "image", content: p });
+              if (text) {
+                elements.push({ type: "text", content: text });
+                text = '';
+              }
+            }
+          }
+          if (text) elements.push({ type: "text", content: text });
+          //fim da linha
+          elements.push({ type: "br", content: "" });
+        }
+        return elements;
+      } catch (e) {
+        console.log('err bind', e)
+      }
+    }
 
-          <div class="site-info">
-            <h1 class="site-name"><a title="página inicial" href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
+    var main = function () {
+      test = new WebSocket("ws://relay.snort.social");
 
-          {% include nav.html %}
-        </header>
-      </div>
+      test.onopen = (event) => {
+        test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"]}]');
+      };
+      let all = [];
+      test.onmessage = (event) => {
+        let encoded = JSON.parse(event.data);
+
+        if (encoded.length >= 3 && encoded[2].kind == 1 && encoded[2].tags.length == 0) {
+          all.push(encoded[2]);
+        }
+        if (encoded[0] == "EOSE") {
+          $("#test").text("");
+          all.sort((a, b) => {
+            return b.created_at - a.created_at;
+          })
+
+          for (let m of all) {
+            m = getElements(m.content);
+            let divPost = $("<div></div>")
+              .attr('style', `
+                  width: 100%; 
+                  border: 2px; 
+                  border-style: solid; 
+                  border-color: gray; 
+                  border-radius: 20px; 
+                  padding: 10px; 
+                  margin-bottom: 20px;
+              `);
+
+            for (let el of m) {
+              let elToAppend = null;
+              if (el.type == 'text') {
+                elToAppend = $('<span></span>').text(el.content);
+              } else if (el.type == 'image') {
+                elToAppend = $('<img></img>').attr('src', el.content)
+                    .attr('style', "max-height: 200px;");
+              } else if (el.type == 'br') {
+                elToAppend = $("<br></br>");
+              }
+              divPost.append(elToAppend);
+            }
+            $("#test").append(divPost);
+          }
+        }
+      }
+    }
+    main();
+
+  </script>
+  {% endif %}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEJTM44ZP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-WEJTM44ZP4');
+  </script>
+
+  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+</head>
+
+<body>
+  <div class="wrapper-masthead">
+    <div class="container">
+      <header class="masthead clearfix">
+        <a title="página inicial" href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}"
+            alt="meu avatar no site" title="meu avatar no site" /></a>
+
+        <div class="site-info">
+          <h1 class="site-name"><a title="página inicial" href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+          <p class="site-description">{{ site.description }}</p>
+        </div>
+
+        {% include nav.html %}
+      </header>
     </div>
+  </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+  <div id="main" role="main" class="container">
+    {% if page.isNostr %}
+    <article class="page">
+      <h1>Nostr</h1>
+      <a target="_blank" href="https://iris.to/carloshmbtn@carloshmbtn.github.io">Perfil no Iris</a>
+      <div style="margin-top: 20px;" id="test">Carregando...</div>
+    </article>
+    {% else %}
+
+    {{ content }}
+
+    {% endif %}
+  </div>
+
+  <div class="wrapper-footer">
+    <div class="container">
+      <footer class="footer">
+        {% include svg-icons.html %}
+        <p style="word-break: break-all; color: gray;">
+          <strong>NOSTR public key:
+          </strong>ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e
+        </p>
+      </footer>
     </div>
+  </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-          <p style="word-break: break-all; color: gray;">
-            <strong>NOSTR public key:  
-            </strong>ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e
-          </p>
-        </footer>
-      </div>
-    </div>
+  {% include analytics.html %}
+</body>
 
-    {% include analytics.html %}
-  </body>
 </html>
