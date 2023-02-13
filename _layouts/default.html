@@ -60,7 +60,7 @@
     }
 
     var main = function () {
-      test = new WebSocket("ws://relay.snort.social");
+      test = new WebSocket("wss://relay.snort.social");
 
       test.onopen = (event) => {
         test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"]}]');
