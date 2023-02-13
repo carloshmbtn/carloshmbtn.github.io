@@ -70,7 +70,7 @@
         let encoded = JSON.parse(event.data);
         
         if (encoded.length >= 3 && encoded[2].kind == 1 && (encoded[2].tags.length == 0 || 
-          !encoded[2].tags.find((t) => !t.startsWith("#"))
+          !encoded[2].tags.find((t) => Array.isArray(t) && !t[0] == 't')
         )) {
           all.push(encoded[2]);
         }
