@@ -147,11 +147,20 @@
 
   <div id="main" role="main" class="container">
     {% if page.isNostr %}
+    <h1>{{ page.title }}</h1>
+    
     <article class="page">
-      <h1>Nostr</h1>
-      <a target="_blank" href="https://iris.to/carloshmbtn@carloshmbtn.github.io">Perfil no Iris</a>
+      <div class="entry">
+        {{ content }}  
+      </div>
+      
       <div style="margin-top: 20px;" id="test">Carregando...</div>
     </article>
+
+    <div class="date">
+      Escrito em {{ page.date | date: "%d/%m/%Y" }}
+    </div>    
+    {% include disqus.html %}
     {% else %}
 
     {{ content }}
