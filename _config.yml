@@ -108,3 +108,28 @@ defaults:
       path: 'visualnovel/**'
     values:
       sitemap: false
+  -
+    scope:
+      path: 'chat'
+    values:
+      sitemap: false
+  -
+    scope:
+      path: 'chat-v2'
+    values:
+      sitemap: false
+  -
+    scope:
+      path: 'google7dcd43a324e1197e.html'
+    values:
+      sitemap: false
+  -
+    scope:
+      path: 'images/**'
+    values:
+      sitemap: false
+  -
+    scope:
+      path: 'yandex_dcf6a2e1c60076a3.html'
+    values:
+      sitemap: false
