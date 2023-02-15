@@ -99,7 +99,7 @@
                 elToAppend = $('<span></span>').text(el.content);
               } else if (el.type == 'image') {
                 elToAppend = $('<img></img>').attr('src', el.content)
-                    .attr('style', "max-height: 200px;");
+                    .attr('style', "max-height: 200px; border-radius: 20px;");
               } else if (el.type == 'br') {
                 elToAppend = $("<br></br>");
               }
