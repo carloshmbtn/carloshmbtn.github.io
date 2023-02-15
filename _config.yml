@@ -98,3 +98,13 @@ defaults:
       path: 'mangas/**'
     values:
       sitemap: false
+  -
+    scope:
+      path: 'visualnovel'
+    values:
+      sitemap: false
+  -
+    scope:
+      path: 'visualnovel/**'
+    values:
+      sitemap: false
