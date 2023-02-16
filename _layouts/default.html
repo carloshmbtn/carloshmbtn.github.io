@@ -29,6 +29,10 @@
       return !!images.find((i) => url.toLowerCase().endsWith("."+i));
     }
 
+    function isYoutube(url){
+      return url.indexOf("youtube.") > -1 || url.indexOf("youtu.be") > -1;
+    }
+
     function getElements(rawText) {
       try {
         let lines = rawText.split("\n");
@@ -41,12 +45,21 @@
             if (p.indexOf('https://') == -1) {
               text += p + " ";
             }
-            if (p.indexOf('https://') > -1 && isImage(p)) {
-              elements.push({ type: "image", content: p });
+            if (p.indexOf('https://') > -1) {
+
               if (text) {
-                elements.push({ type: "text", content: text });
-                text = '';
+                  elements.push({ type: "text", content: text });
+                  text = '';
               }
+
+              if(isImage(p)){
+                elements.push({ type: "image", content: p });
+              } else if(isYoutube(p)){
+                elements.push({type: "youtube", content: p});
+              } else {
+                elements.push({type: "link", content: p});
+              }
+              
             }
           }
           if (text) elements.push({ type: "text", content: text });
@@ -100,7 +113,23 @@
               } else if (el.type == 'image') {
                 elToAppend = $('<img></img>').attr('src', el.content)
                     .attr('style', "max-height: 200px; border-radius: 20px;");
-              } else if (el.type == 'br') {
+              } else if(el.type == 'youtube'){
+                let part = el.content.split('?v=')[1];
+                let id = part ? part.split('&')[0] : null;
+
+                if(!id){
+                  id = el.content.split('/').pop().split('?')[0];
+                }
+
+                elToAppend = $('<iframe></iframe>').attr('src', 'https://www.youtube.com/embed/'+id)
+                .attr('frameborder', '0')
+                .attr('width', '560').attr('height', '340').attr('allowfullscreen', '')
+                
+              } else if(el.type == 'link'){
+                elToAppend = $('<a></a>').attr('href', el.content).text(el.content);
+              } 
+              
+              else if (el.type == 'br') {
                 elToAppend = $("<br></br>");
               }
               divPost.append(elToAppend);
