@@ -126,7 +126,7 @@
                 .attr('allowfullscreen', '')
                 
               } else if(el.type == 'link'){
-                elToAppend = $('<a></a>').attr('href', el.content).attr('style', 'word-break: break-all;').text(el.content);
+                elToAppend = $('<a></a>').attr('href', el.content).attr('style', 'word-break: break-all;').attr('target', '_blank').text(el.content);
               } 
               
               else if (el.type == 'br') {
