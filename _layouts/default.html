@@ -124,6 +124,7 @@
                 elToAppend = $('<iframe></iframe>').attr('src', 'https://www.youtube.com/embed/'+id)
                 .attr('frameborder', '0')
                 .attr('allowfullscreen', '')
+                .attr('style', "border-radius: 20px;");
                 
               } else if(el.type == 'link'){
                 elToAppend = $('<a></a>').attr('href', el.content).attr('style', 'word-break: break-all;').attr('target', '_blank').text(el.content);
