@@ -25,7 +25,7 @@ permalink: /simple-calcs/
             return;
         }
 
-        let result = ((b.value * c.value)/(a.value)).toFixed(2);
+        let result = ((b.value * c.value)/(a.value)).toFixed(10);
 
         if(isNaN(result)) document.getElementById("d").textContent = "";
         else document.getElementById("d").textContent = result;
