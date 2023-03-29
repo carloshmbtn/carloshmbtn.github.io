@@ -227,7 +227,7 @@
             e.preventDefault();
             let toConvert = document.getElementById("value-converter").value;
             if(toConvert.indexOf(",") > -1){
-              toConvert = toConvert.replace(/,/g, ".");
+              toConvert = toConvert.replace(/,/g, ".").replace(/‎/g, '').trim();
             }
             if(isNaN(toConvert)){
               return alert("não é número!");
