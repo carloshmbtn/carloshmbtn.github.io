@@ -206,6 +206,35 @@
           <strong>NOSTR public key:
           </strong>ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e
         </p>
+        
+        <p id="btc-info">BTC: </p>
+        <form id="convert-form" action="">
+          <input id="value-converter" type="text"/>
+          <button type="submit">Converter</button>
+        </form>
+        <script>
+          let atual = 0;
+          fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl').then(function (response) {
+            return response.json();
+          }).then(function (data) {
+            atual = data.bitcoin.brl;
+            document.getElementById("btc-info").innerHTML = "BTC: R$"+data.bitcoin.brl;
+          }).catch(function (err) {
+            console.warn('Something went wrong.', err);
+          });
+
+          document.getElementById("convert-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            let toConvert = document.getElementById("value-converter").value;
+            if(toConvert.indexOf(",") > -1){
+              toConvert = toConvert.replace(/,/g, ".");
+            }
+            if(isNaN(toConvert)){
+              return alert("não é número!");
+            }
+            document.getElementById("value-converter").value = "R$ "+(toConvert * atual);
+          });
+        </script>
       </footer>
     </div>
   </div>
