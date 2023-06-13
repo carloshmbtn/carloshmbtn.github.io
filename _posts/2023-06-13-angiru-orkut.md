@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Angiru - Novo clone do Orkut
 og: https://carloshmbtn.github.io/images/og/angiru.png
 cover: /images/og/angiru.png
