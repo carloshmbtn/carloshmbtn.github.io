@@ -26,4 +26,6 @@ Quando apertar **concordar** o ps2 vai fazer uma verificação se as configuraç
 
 Agora basta escolher o jogo e curtir. Abaixo um vídeo mostrando toda essa configuração funcionando. Vale lembrar que como no vídeo seu ps2 deve estar conectado ao PC por meio de um cabo de rede. No meu caso funciona simplesmente com um cabo de rede daqueles que vem junto com o roteador.
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/wQnE0HcYBW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-container">
+<iframe  src="https://www.youtube.com/embed/wQnE0HcYBW8" title="Teste OPL via Rede no Linux" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>

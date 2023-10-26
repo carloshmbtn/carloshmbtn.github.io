@@ -1,17 +1,170 @@
----
-layout: default
----
+{% include header.html %}
+    <div class="wrapper">
+      <div class="content">
+        <div class="container container-center">
+          <div class="row">
+            <div class="col-md-8 offset-md-1">
+              <div class="article">
+                <div class="card">
+                  <h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+                  <div class="post-meta">
+                    <div class="post-time">
+                      <i class="fa fa-calendar-alt"></i>
+                      <time>{{ page.date | date_to_string }}</time>
+                    </div>
+                    <ul>
+                      {% for tag in page.tags %}
+                        <li><a href="{{ '/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="post-content">
+                    {% if page.toc %}
+                      {% include toc.html html=content class='toc' %}
+                    {% endif %}
+                    {{ content }}
+                    {% include share.html %}
+                  </div>
+                  {% if page.comments %}
+                  <div id="disqus_thread">
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 hidden-xs">
+              {% include sidebar.html %}
+            </div>
+          </div>
+        </div>
+        {% include disqus-comments.html %}
+      </div>
+      {% include footer.html %}
+    </div>
+  </body>
+  {% if page.isNostr %}
+  <script>
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+    function isImage(url){
+      let images = ["jpg", "jpeg", "png", "gif"];
+      return !!images.find((i) => url.toLowerCase().endsWith("."+i));
+    }
 
-  <div class="entry">
-    {{ content }}
-  </div>
+    function isYoutube(url){
+      return url.indexOf("youtube.") > -1 || url.indexOf("youtu.be") > -1;
+    }
 
-  <div class="date">
-    Escrito em {{ page.date | date: "%d/%m/%Y" }}
-  </div>
+    function getElements(rawText) {
+      try {
+        let lines = rawText.split("\n");
+        let elements = [];
 
-  {% include disqus.html %}
-</article>
+        for (let line of lines) {
+          let parts = line.split(" ");
+          let text = '';
+          for (let p of parts) {
+            if (p.indexOf('https://') == -1) {
+              text += p + " ";
+            }
+            if (p.indexOf('https://') > -1) {
+
+              if (text) {
+                  elements.push({ type: "text", content: text });
+                  text = '';
+              }
+
+              if(isImage(p)){
+                elements.push({ type: "image", content: p });
+              } else if(isYoutube(p)){
+                elements.push({type: "youtube", content: p});
+              } else {
+                elements.push({type: "link", content: p});
+              }
+              
+            }
+          }
+          if (text) elements.push({ type: "text", content: text });
+          //fim da linha
+          elements.push({ type: "br", content: "" });
+        }
+        return elements;
+      } catch (e) {
+        console.log('err bind', e)
+      }
+    }
+
+    var main = function () {
+      test = new WebSocket("wss://nostr.wine");
+
+      test.onopen = (event) => {
+        test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"]}]');
+      };
+      let all = [];
+      test.onmessage = (event) => {
+        let encoded = JSON.parse(event.data);
+        
+        if (encoded.length >= 3 && encoded[2].kind == 1 && (encoded[2].tags.length == 0 || 
+          !encoded[2].tags.find((t) => Array.isArray(t) && t[0] != 't')
+        )) {
+          all.push(encoded[2]);
+        }
+        if (encoded[0] == "EOSE") {
+          $("#test").text("");
+          all.sort((a, b) => {
+            return b.created_at - a.created_at;
+          })
+
+          for (let m of all) {
+            m = getElements(m.content);
+            let divPost = $("<div></div>")
+              .attr('style', `
+                  width: 100%; 
+                  border: 2px; 
+                  border-style: solid; 
+                  border-color: gray; 
+                  border-radius: 20px; 
+                  padding: 10px; 
+                  margin-bottom: 20px;
+              `);
+
+            for (let el of m) {
+              let elToAppend = null;
+              if (el.type == 'text') {
+                elToAppend = $('<span></span>').text(el.content);
+              } else if (el.type == 'image') {
+                elToAppend = $('<img></img>').attr('src', el.content)
+                    .attr('style', "max-height: 200px; border-radius: 20px;");
+              } else if(el.type == 'youtube'){
+                let part = el.content.split('?v=')[1];
+                let id = part ? part.split('&')[0] : null;
+
+                if(!id){
+                  id = el.content.split('/').pop().split('?')[0];
+                }
+
+                elToAppend = $('<iframe></iframe>').attr('src', 'https://www.youtube.com/embed/'+id)
+                .attr('frameborder', '0')
+                .attr('allowfullscreen', '')
+                .attr('style', "border-radius: 20px;");
+                
+              } else if(el.type == 'link'){
+                elToAppend = $('<a></a>').attr('href', el.content).attr('style', 'word-break: break-all;').attr('target', '_blank').text(el.content);
+              } 
+              
+              else if (el.type == 'br') {
+                elToAppend = $("<br></br>");
+              }
+              divPost.append(elToAppend);
+            }
+            $("#test").append(divPost);
+          }
+        }
+      }
+    }
+    main();
+
+  </script>
+  {% endif %}
+</html>

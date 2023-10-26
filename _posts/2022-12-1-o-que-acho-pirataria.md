@@ -3,6 +3,7 @@ layout: post
 title: O que acho sobre pirataria
 cover: https://carloshmbtn.github.io/images/posts/pirataria/cover.png
 og: https://carloshmbtn.github.io/images/posts/pirataria/cover.png
+tags: opinião
 metaDescription: No Brasil sempre tivemos uma cultura de piratear todo tipo de conteúdo, aqui comento um pouco sobre como vejo essa questão
 ---
 

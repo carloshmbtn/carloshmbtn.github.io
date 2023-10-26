@@ -3,6 +3,7 @@ layout: post
 title: Angiru - Novo clone do Orkut
 og: https://carloshmbtn.github.io/images/og/angiru.png
 cover: /images/og/angiru.png
+tags: social
 metaDescription: Um clone do Orkut chamado Angiru, ele foi desenvolvido por um paraguaio chamado Mauricio, aqui falo um pouco sobre essa plataforma
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: Adonis Js MVC
 og: https://carloshmbtn.github.io/images/posts/adonis/adonis-logo.png
 cover: https://carloshmbtn.github.io/images/posts/adonis/adonis-logo.png
+tags: desenvolvimento
 metaDescription: Esse framework pode não ser um dos mais famosos que você vai encontrar por ai, mas ele resolve bem o problema da necessidade de uma porção de código funcional na linguagem JavaScript.
 ---
 

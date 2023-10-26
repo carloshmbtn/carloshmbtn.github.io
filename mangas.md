@@ -6,6 +6,8 @@ og: https://carloshmbtn.github.io/images/og/manga-og.jpg
 metaDescription: Mangá Umisho traduzido em português do Brasil. Título completo - Kenko Zenrakei Suieibu Umisho
 ---
 
+# Mangás - Umisho PT-BR
+
 Aqui vou publicando os mangás que vou traduzindo (no momento somente um de 130 capítulos)
 
 ### Kenko Zenrakei Suieibu Umisho (ou só Umisho)
@@ -47,4 +49,4 @@ O protagonista é o estudante Kaname que não consegue nadar, mas misteriosament
 
 **[Loja parceira Magazine Luiza](https://www.magazinevoce.com.br/magazinevocesonline/ "minha loja"){:target="_blank"}**
 
-{% include disqus.html %}
+{% include disqus-comments.html %}

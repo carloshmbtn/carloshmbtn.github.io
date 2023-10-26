@@ -1,7 +1,0 @@
-Sitemap: https://carloshmbtn.github.io/sitemap.xml
-User-Agent: *
-Disallow: /mangas/umisho/umisho5.pdf
-Disallow: /mangas/umisho/umisho4.pdf
-Disallow: /mangas/umisho/umisho3.pdf
-Disallow: /mangas/umisho/umisho2.pdf
-Disallow: /mangas/umisho/umisho1.pdf

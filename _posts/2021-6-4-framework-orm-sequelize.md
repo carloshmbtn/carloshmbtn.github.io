@@ -3,6 +3,7 @@ layout: post
 title: Framework ORM Sequelize
 og: https://carloshmbtn.github.io/images/posts/sequelize/cover.png
 cover: https://carloshmbtn.github.io/images/posts/sequelize/cover.png
+tags: desenvolvimento
 metaDescription: Gravei esse vídeo há um tempo, mostrei um pouco a respeito do Sequelize, um framework ORM para Javascript. Foi uma ferramenta muito útil, além de usar em alguns 
 ---
 
@@ -10,5 +11,6 @@ Gravei esse vídeo há um tempo, mostrei um pouco a respeito do Sequelize, um fr
 
 
 Abaixo, o vídeo em questão:
-
-<iframe class="youtube-player" src="https://www.youtube.com/embed/RA7Du-cj1DA?version=3&amp;rel=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;fs=1&amp;hl=pt-br&amp;autohide=2&amp;start=12&amp;wmode=transparent" allowfullscreen="true" style="border: 0px; display: block; margin: 0px; width: 655.906px; height: 368.947px;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" data-ratio="0.5625" data-width="656" data-height="369"></iframe>
+<div class="video-container">
+<iframe  src="https://www.youtube.com/embed/RA7Du-cj1DA" title="Teste OPL via Rede no Linux" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
