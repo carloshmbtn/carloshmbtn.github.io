@@ -52,6 +52,11 @@
       return !!images.find((i) => url.toLowerCase().endsWith("."+i));
     }
 
+    function isVideo(url){
+      let video = ["mp4", "webm"];
+      return !!video.find((i) => url.toLowerCase().endsWith("."+i));
+    }
+
     function isYoutube(url){
       return url.indexOf("youtube.") > -1 || url.indexOf("youtu.be") > -1;
     }
@@ -79,6 +84,8 @@
                 elements.push({ type: "image", content: p });
               } else if(isYoutube(p)){
                 elements.push({type: "youtube", content: p});
+              } else if(isVideo(p)){
+                elements.push({type: "video", content: p});
               } else {
                 elements.push({type: "link", content: p});
               }
@@ -149,6 +156,8 @@
                 .attr('allowfullscreen', '')
                 .attr('style', "border-radius: 20px;");
                 
+              } else if(el.type == "video"){ 
+                elToAppend = $('<video></video>').attr('style', 'max-width: 100%;').attr('controls', '').append($('<source></source>').attr('src', el.content).attr('type', 'video/mp4'));
               } else if(el.type == 'link'){
                 elToAppend = $('<a></a>').attr('href', el.content).attr('style', 'word-break: break-all;').attr('target', '_blank').text(el.content);
               } 
