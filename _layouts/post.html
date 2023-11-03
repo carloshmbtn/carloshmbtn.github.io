@@ -141,8 +141,8 @@
               if (el.type == 'text') {
                 elToAppend = $('<span></span>').text(el.content);
               } else if (el.type == 'image') {
-                elToAppend = $('<img></img>').attr('src', el.content)
-                    .attr('style', "max-height: 200px; border-radius: 20px;");
+                elToAppend = $('<a></a>').attr('href', el.content).attr('target', '_blank').append($('<img></img>').attr('src', el.content)
+                    .attr('style', "max-height: 200px; border-radius: 20px;"));
               } else if(el.type == 'youtube'){
                 let part = el.content.split('?v=')[1];
                 let id = part ? part.split('&')[0] : null;
