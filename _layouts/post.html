@@ -115,7 +115,7 @@
       };
 
       forMusic.onopen = (event) => {
-        interval = setInterval(functionInterval, 2000);
+        interval = setInterval(functionInterval, 10000);
       };
 
       forMusic.onclose = () => {
@@ -123,11 +123,11 @@
       };
 
       addEventListener("focus", (event) => {
-        if(Date.now() - lastMusicTime.getTime() > 3000){
+        if(Date.now() - lastMusicTime.getTime() > 11000){
           //restart interval
           try{clearInterval(interval)}catch(_){};
 
-          interval = setInterval(functionInterval, 2000);
+          interval = setInterval(functionInterval, 10000);
           console.log('resetando...');
         }
       });
