@@ -106,12 +106,31 @@
       test = new WebSocket("wss://relay.nostr.band");
       let forMusic = new WebSocket("wss://relay.nostr.band");
       let lastMusic = {};
+      let lastMusicTime = new Date();
+      let interval;
+
+      let functionInterval = () => {
+        forMusic.send('["REQ","music_nostr",{"authors":["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"],"kinds":[30315]}]')
+      };
 
       forMusic.onopen = (event) => {
-        setInterval(()=> {
-          forMusic.send('["REQ","music_nostr",{"authors":["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"],"kinds":[30315]}]')
-        }, 2000);
+        interval = setInterval(functionInterval, 2000);
+        lastMusicTime = new Date();
       };
+
+      forMusic.on("disconnect", () => {
+        forMusic = new WebSocket("wss://relay.nostr.band");
+      });
+
+      addEventListener("focus", (event) => {
+        if(Date.now() - lastMusicTime.getTime() > 3000){
+          //restart interval
+          try{clearInterval(interval)}catch(_){};
+
+          setInterval(functionInterval, 2000);
+          console.log('resetando...');
+        }
+      });
 
       forMusic.onmessage = (event) => {
         let encoded = JSON.parse(event.data);
