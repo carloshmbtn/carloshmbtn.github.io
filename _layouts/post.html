@@ -127,7 +127,7 @@
           //restart interval
           try{clearInterval(interval)}catch(_){};
 
-          setInterval(functionInterval, 2000);
+          interval = setInterval(functionInterval, 2000);
           console.log('resetando...');
         }
       });
