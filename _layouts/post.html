@@ -131,7 +131,7 @@
                       $("#music-nostr").html("");
                       $("#music-nostr").append($('<p></p>').html('Ouvindo agora:'));
                       $("#music-nostr").append($('<a></a>').attr('target', '_blank').attr('href', lastMusic.url).append($('<p></p>').html(lastMusic.content)));
-                      $("#music-nostr").append($('<img></img>').attr('src', lastMusic.cover));
+                      $("#music-nostr").append($('<img></img>').attr('style', 'height: 60px; width: auto;').attr('src', lastMusic.cover));
                     } else {
                       $("#music-nostr").html("Não estou ouvindo nada agora...");
                     }
