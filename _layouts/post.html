@@ -102,9 +102,13 @@
       }
     }
 
+    var instanceMusicSocket = function(){
+      return new WebSocket("wss://relay.damus.io");
+    }
+
     var main = function () {
       test = new WebSocket("wss://relay.nostr.band");
-      let forMusic = new WebSocket("wss://relay.nostr.band");
+      let forMusic = instanceMusicSocket();
       let lastMusic = {};
       let lastMusicTime = new Date();
       let interval;
@@ -112,7 +116,12 @@
       let functionInterval = () => {
         try{
           forMusic.send('["REQ","music_nostr",{"authors":["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"],"kinds":[30315]}]')
-        } catch(_){}
+        } catch(_){
+          if(forMusic.readyState == WebSocket.CLOSED || forMusic.readyState == WebSocket.CLOSING){
+            try{clearInterval(interval);}catch(_){}
+            forMusic = instanceMusicSocket();
+          }
+        }
         
         lastMusicTime = new Date();
       };
@@ -123,7 +132,7 @@
       };
 
       forMusic.onclose = () => {
-        forMusic = new WebSocket("wss://relay.nostr.band");
+        forMusic = instanceMusicSocket();
       };
 
       addEventListener("focus", (event) => {
@@ -139,7 +148,7 @@
       forMusic.onmessage = (event) => {
         let encoded = JSON.parse(event.data);
 
-        if (encoded.length >= 3 && encoded[2].kind == 30315){
+        if (encoded.length >= 3){
           for(let i = 2; i < encoded.length; i++){
             if(encoded[i].kind == 30315){
               //verifica a tag
