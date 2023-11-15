@@ -124,12 +124,12 @@
 
       let functionInterval = () => {
         try{
-          forMusic.send('["REQ","music_nostr",{"authors":["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"],"kinds":[30315]}]')
-        } catch(_){
-          if(forMusic.readyState != WebSocket.OPEN){
+          if(forMusic.readyState == WebSocket.OPEN){
+            forMusic.send('["REQ","music_nostr",{"authors":["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"],"kinds":[30315]}]') 
+          } else {
             forMusic = instanceMusicSocket();
           }
-        }
+        } catch(_){}
         
         lastMusicTime = new Date();
       };
