@@ -111,15 +111,41 @@
           interval = setInterval(functionInterval, 10000);
         };
 
-        i.onclose = () => {
-          i = instanceMusicSocket();
-        };
+        i.onmessage = (event) => {
+          let encoded = JSON.parse(event.data);
+
+          if (encoded.length >= 3){
+            for(let i = 2; i < encoded.length; i++){
+              if(encoded[i].kind == 30315){
+                //verifica a tag
+                let tag = (encoded[i].tags || []).find((t) => t[0] == 'd' && t[1] == 'music');
+                if(tag) {
+                  if(encoded[i].content != lastMusic.content){
+                    lastMusic.content = encoded[i].content;
+                    lastMusic.url = (encoded[i].tags.find((t) => t[0] == "r") || {})[1];
+                    lastMusic.cover = (encoded[i].tags.find((t) => t[0] == "cover") || {})[1];
+                    lastMusic.expiration = (encoded[i].tags.find((t) => t[0] == "expiration") || {})[1];
+
+
+                    if(!lastMusic.expiration || isNaN(lastMusic.expiration) || Date.now() < (lastMusic.expiration*1000)){
+                      $("#music-nostr").html("");
+                      $("#music-nostr").append($('<p></p>').html('Ouvindo agora:'));
+                      $("#music-nostr").append($('<a></a>').attr('target', '_blank').attr('href', lastMusic.url).append($('<p></p>').html(lastMusic.content)));
+                      $("#music-nostr").append($('<img></img>').attr('src', lastMusic.cover));
+                    } else {
+                      $("#music-nostr").html("Não estou ouvindo nada agora...");
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         return i;
       }
       test = new WebSocket("wss://relay.nostr.band");
       let forMusic = instanceMusicSocket();
       let lastMusic = {};
-      let lastMusicTime = new Date();
       let interval;
 
       let functionInterval = () => {
@@ -130,50 +156,13 @@
             forMusic = instanceMusicSocket();
           }
         } catch(_){}
-        
-        lastMusicTime = new Date();
       };
 
-      addEventListener("focus", (event) => {
-        if(Date.now() - lastMusicTime.getTime() > 11000){
-          //restart interval
-          try{clearInterval(interval)}catch(_){};
-
-          interval = setInterval(functionInterval, 10000);
-          console.log('resetando...');
-        }
-      });
-
-      forMusic.onmessage = (event) => {
-        let encoded = JSON.parse(event.data);
-
-        if (encoded.length >= 3){
-          for(let i = 2; i < encoded.length; i++){
-            if(encoded[i].kind == 30315){
-              //verifica a tag
-              let tag = (encoded[i].tags || []).find((t) => t[0] == 'd' && t[1] == 'music');
-              if(tag) {
-                if(encoded[i].content != lastMusic.content){
-                  lastMusic.content = encoded[i].content;
-                  lastMusic.url = (encoded[i].tags.find((t) => t[0] == "r") || {})[1];
-                  lastMusic.cover = (encoded[i].tags.find((t) => t[0] == "cover") || {})[1];
-                  lastMusic.expiration = (encoded[i].tags.find((t) => t[0] == "expiration") || {})[1];
-
-
-                  if(!lastMusic.expiration || isNaN(lastMusic.expiration) || Date.now() < (lastMusic.expiration*1000)){
-                    $("#music-nostr").html("");
-                    $("#music-nostr").append($('<p></p>').html('Ouvindo agora:'));
-                    $("#music-nostr").append($('<a></a>').attr('target', '_blank').attr('href', lastMusic.url).append($('<p></p>').html(lastMusic.content)));
-                    $("#music-nostr").append($('<img></img>').attr('src', lastMusic.cover));
-                  } else {
-                    $("#music-nostr").html("Não estou ouvindo nada agora...");
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      window.onfocus = () => {
+        console.log('focus');
+        try{forMusic.close();}catch(_){}
+        forMusic = instanceMusicSocket();
+      };
 
       test.onopen = (event) => {
         test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"]}]');
