@@ -55,7 +55,7 @@
             
             // Poll-function that looks for new messages
             var poll_for_new_messages = function(){
-                $.ajax({url: 'https://api-carlos.000webhostapp.com/chat/devolvefile.php', dataType: 'json', ifModified: true, timeout: 2000, success: function(messages, status){
+                $.ajax({url: 'http://api-carlos.lovestoblog.com/chat/devolvefile.php', dataType: 'json', ifModified: true, timeout: 2000, success: function(messages, status){
                     // Skip all responses with unmodified data
                     if (!messages)
                         return;
@@ -135,7 +135,7 @@
                     </ul>
                 </div>
                 <div class="chat-message clearfix">
-                    <form action="https://api-carlos.000webhostapp.com/chat/index.php" method="POST">
+                    <form action="http://api-carlos.lovestoblog.com/chat/index.php" method="POST">
                     <div class=" mb-0">
                         
                         <input type="text" name="content" class="form-control" placeholder="Texto aqui, usuário abaixo...">
