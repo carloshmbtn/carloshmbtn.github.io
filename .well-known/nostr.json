@@ -2,5 +2,8 @@
   "names": {
     "carloshmbtn": "ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e",
     "_": "ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"
+  },
+  "relays": {
+    "ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e": ["wss://carlos-cdb.top"]
   }
 }
