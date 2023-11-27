@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="1; URL='http://api-carlos.lovestoblog.com/chat/index.php'"/>
+    <!-- <meta http-equiv="refresh" content="1; URL='http://api-carlos.lovestoblog.com/chat/index.php'"/> -->
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
     <title>Chat carloshmbtn</title>
@@ -56,7 +56,7 @@
             
             // Poll-function that looks for new messages
             var poll_for_new_messages = function(){
-                $.ajax({url: 'http://api-carlos.lovestoblog.com/chat/devolvefile.php', dataType: 'json', ifModified: true, timeout: 2000, success: function(messages, status){
+                $.ajax({url: 'https://carlos-cdb.top/chat/devolvefile.php', dataType: 'json', ifModified: true, timeout: 2000, success: function(messages, status){
                     // Skip all responses with unmodified data
                     if (!messages)
                         return;
@@ -136,7 +136,7 @@
                     </ul>
                 </div>
                 <div class="chat-message clearfix">
-                    <form action="http://api-carlos.lovestoblog.com/chat/index.php" method="POST">
+                    <form action="https://carlos-cdb.top/chat/index.php" method="POST">
                     <div class=" mb-0">
                         
                         <input type="text" name="content" class="form-control" placeholder="Texto aqui, usuário abaixo...">
@@ -148,7 +148,7 @@
             </div>
         </div>
     </div>
-    <a href="http://api-carlos.lovestoblog.com/chat/index.php">Insecure version</a>
+    <!-- <a href="http://api-carlos.lovestoblog.com/chat/index.php">Insecure version</a> -->
 </div>
 </div>
 
