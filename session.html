@@ -1,1 +1,24 @@
-05a1c47a0558935b41c7e45634bf35547f0711da3ae48ca4c740093b185c46a75f
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Address</title>
+    <script>
+        var copy = function(){
+            navigator.clipboard.writeText(document.getElementById("myId").innerText);
+            let el = document.getElementById("copy");
+            el.style.display = 'block';
+            setTimeout(()=> {
+                el.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</head>
+<body style="margin: 20px;">
+    <div onclick="copy();">
+        <span id="myId" style="font-size: x-large; word-wrap: break-word">05a1c47a0558935b41c7e45634bf35547f0711da3ae48ca4c740093b185c46a75f</span><br>
+        <img src="session.png"/><br>
+	<p>Clique para copiar</p>
+    <div>
+    <span style="display: none;" id="copy">Copiado...</span>
+</body>
+</html>

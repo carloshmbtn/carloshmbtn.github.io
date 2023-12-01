@@ -104,7 +104,7 @@
 
     var main = function () {
       var instanceMusicSocket = function(){
-        let i = new WebSocket("wss://carlos-cdb.top");
+        let i = new WebSocket("wss://jingle.carlos-cdb.top");
         try{clearInterval(interval)}catch(_){}
         i.onopen = (event) => {
           functionInterval();
