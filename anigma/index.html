@@ -186,7 +186,7 @@
             var imgRegex = /\b(https?:\/\/\S+(?:\.png|\.jpe?g|\.gif|\.webp|\.PNG|\.JPE?G|\.GIF|\.WEBP)\S*)\b/g;
             var urlRegex = /\S+\.{1}[a-zA-Z0-9\?\=\&\$\+\,\;\@\#\%\-\_]{2,}\/?[a-zA-Z0-9/\\?\=\&\$\+\,\;\@\#\%\-\_\.]*/g;
             var returnable = "";
-            if ( !isMine && !text.match( ytRegex ) && !text.match( imgRegex ) ) {
+            if ( !isMine/*&& !text.match( ytRegex )*/ && !text.match( imgRegex ) ) {
                 returnable = text.replace( urlRegex, ( url ) => {
                     if ( url.includes( ".." ) ) {
                         return url;
@@ -198,7 +198,7 @@
                     return `<a onclick="event.stopPropagation()" href="${url2}" target="_blank" rel="nofollow noopener" style="color: #4287f5;">${url}</a>`;
                 })                
             }
-            if ( isMine && !text.match( ytRegex ) && !text.match( imgRegex ) ) {
+            if ( isMine /*&& !text.match( ytRegex )*/ && !text.match( imgRegex ) ) {
                 returnable = text.replace( urlRegex, ( url ) => {
                     if ( url.includes( ".." ) ) {
                         return url;
@@ -236,7 +236,7 @@
                     return `<a href="${img}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()"><img src="${img}" onclick="event.stopPropagation()" /></a>`;
                 })
             }
-            if ( text.match( ytRegex ) ) {
+            /*if ( text.match( ytRegex ) ) {
                 returnable = text.replace( ytRegex, ( yt ) => {
                     if ( yt.endsWith( ")" ) ) {
                         yt = yt.substring( 0, yt.length - 1 );
@@ -244,7 +244,7 @@
                     var vid = `<div class="youtube-wrapper" onclick="event.stopPropagation()"><img class="ratio" src="./16x9-transparent.png" onclick="event.stopPropagation()" /><iframe class="youtube-video" src="${"https://www.youtube-nocookie.com/embed/" + youtube_parser( yt )}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onclick="event.stopPropagation()"></iframe></div><span class="p-in-p" onclick='moveVid( this.previousElementSibling );event.stopPropagation()'>Picture-in-picture</span>`;
                     return vid;
                 })
-            }
+            }*/
             return returnable;
         }
         function markdownify( text, isMine ) {
