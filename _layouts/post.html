@@ -165,7 +165,7 @@
       };
 
       test.onopen = (event) => {
-        test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"]}]');
+        test.send('["REQ", "my_test", {"authors": ["ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e"], "kinds": [1]}]');
       };
       let all = [];
       test.onmessage = (event) => {
