@@ -1,9 +1,9 @@
 {
-  "callback": "https://livingroomofsatoshi.com/api/v1/lnurl/payreq/e8988f18-9b1f-4383-ba45-74c590867bc5",
+  "callback": "https://livingroomofsatoshi.com/api/v1/lnurl/payreq/714c71ae-7ba1-4bb8-8bf9-cdf91b2257a8",
   "maxSendable": 100000000000,
   "minSendable": 1000,
-  "metadata": "[[\"text/plain\",\"Pay to Wallet of Satoshi user: optimalglass46\"],[\"text/identifier\",\"optimalglass46@walletofsatoshi.com\"]]",
-  "commentAllowed": 32,
+  "metadata": "[[\"text/plain\",\"Pay to Wallet of Satoshi user: carloshmbtn\"],[\"text/identifier\",\"carloshmbtn@walletofsatoshi.com\"]]",
+  "commentAllowed": 255,
   "tag": "payRequest",
   "allowsNostr": true,
   "nostrPubkey": "be1d89794bf92de5dd64c1e60f6a2c70c140abac9932418fee30c5c637fe9479"
