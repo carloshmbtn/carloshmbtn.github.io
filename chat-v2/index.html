@@ -18,11 +18,34 @@
             return /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(url)
         }
 
-        function formatUrl(url){
-            if(url.indexOf('http:') == -1 && url.indexOf('https:') == -1){
-                url = 'https://'+url;
+        function formatUrl(text){
+            let regex = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/;
+
+            let links = [];
+            while(true){
+                let result = regex.exec(text);
+                if(!result) break;
+                links.push(result[0]);
+
+                text = text.replace(result[0], '#linkMark');
             }
-            return url;
+            
+            let texts = text.split(' ');
+            let currentText = "";
+            let elements = [];
+            for(let i of texts){
+                if(i.includes('#linkMark')){
+                    if(currentText){
+                        elements.push('<span>'+currentText+'</span>');
+                    }
+                    let link = links.shift();
+                    elements.push('<a target="_blank" href="'+link+'">'+link+'</a>');
+                    currentText = "";
+                } else {
+                    currentText += i+" ";
+                }
+            }
+            return elements;
         }
 
         // <![CDATA[
@@ -87,7 +110,14 @@
                                     ),
 
                                     isUrl(msg.content) ? 
-                                    $('<div class="message other-message float-right"/>').append($('<a target="_blank" href="'+formatUrl(msg.content)+'">'+msg.content+'<a/>')) :
+                                    (function(){
+                                        let main = $('<div class="message other-message float-right"/>');
+                                        let els = formatUrl(msg.content);
+                                        for(let el of els){
+                                            main.append(el);
+                                        }
+                                        return main;
+                                    })() :
 
                                     $('<div class="message other-message float-right"/>').text(msg.content)
                                 )
