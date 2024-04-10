@@ -15,7 +15,7 @@
     <script type="text/javascript">
 
         function isUrl(url){
-            return /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(url)
+            return /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/.test(url)
         }
 
         function formatUrl(text){
@@ -39,12 +39,14 @@
                         elements.push('<span>'+currentText+'</span>');
                     }
                     let link = links.shift();
-                    elements.push('<a target="_blank" href="'+link+'">'+link+'</a>');
+                    elements.push('<a target="_blank" href="'+link+'">'+link+' </a>');
                     currentText = "";
                 } else {
                     currentText += i+" ";
                 }
             }
+            if(currentText) elements.push('<span>'+currentText+'</span>');
+
             return elements;
         }
 
