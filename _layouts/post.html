@@ -53,7 +53,7 @@
     }
 
     function isVideo(url){
-      let video = ["mp4", "webm"];
+      let video = ["mp4", "webm", "mov"];
       return !!video.find((i) => url.toLowerCase().endsWith("."+i));
     }
 
