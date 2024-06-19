@@ -171,9 +171,7 @@
       test.onmessage = (event) => {
         let encoded = JSON.parse(event.data);
         
-        if (encoded.length >= 3 && encoded[2].kind == 1 && (encoded[2].tags.length == 0 || 
-          !encoded[2].tags.find((t) => Array.isArray(t) && t[0] != 't')
-        )) {
+        if (encoded.length >= 3 && encoded[2].kind == 1) {
           all.push(encoded[2]);
         }
         if (encoded[0] == "EOSE") {
