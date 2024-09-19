@@ -5,18 +5,18 @@
   },
   "relays": {
     "ce4446d03e99590cc48ca58ecbbf476f161927cd28b96d7459466f420581579e": [
-      "wss://nostr.mutinywallet.com",
-      "wss://relay.damus.io",
-      "wss://nos.lol",
-      "wss://relay.snort.social",
-      "wss://offchain.pub",
-      "wss://relay.current.fyi",
-      "wss://nostr.wine",
       "wss://relay.nostr.band",
-      "wss://nostr.fmt.wiz.biz",
+      "wss://relay.primal.net",
+      "wss://relay.damus.io",
       "wss://eden.nostr.land",
-      "wss://relay.mostr.pub",
-      "wss://carlos-cdb.top"
+      "wss://nostr.wine",
+      "wss://nos.lol",
+      "wss://nostr.fmt.wiz.biz",
+      "wss://offchain.pub",
+      "wss://carlos-cdb.top",
+      "wss://relay.snort.social",
+      "wss://relay.westernbtc.com",
+      "wss://relay.mostr.pub"
     ]
   }
 }
