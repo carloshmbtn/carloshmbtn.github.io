@@ -72,6 +72,34 @@ min protocol = CORE
 ntlm auth = yes
 ```
 
+**Update: se você tem certeza que fez tudo certo até aqui, não há erros de conexão no OPL e a lista de jogos está vazia, tente essa versão alternativa do arquivo de configuração:**
+
+```
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+netbios name = ps2opl
+security = user
+map to guest = bad user
+dns proxy = no
+#max protocol = NT1
+min protocol = NT1
+ntlm auth = yes
+#============================ Share Definitions ==============================
+
+[ps2opl]
+    path = /home/carlos/ps2opl
+    browseable = yes
+    read only = no
+    guest ok = yes
+    public = yes
+    available = yes
+    create mask = 666
+    directory mask = 777
+    force user = carlos
+    force group = carlos
+```
+
 Note que onde temos /home/carlos, **carlos** deve ser trocado pelo seu usuário. Em caso de dúvida abra o terminal e digite **pwd** que vai exibir o nome da pasta do seu usuário (diretório corrente).
 
 Feito isso vamos salvar o arquivo (apertando **ESC** no teclado, digitando **:wq** e logo depois **y** e apertando **enter**) e reiniciar o Samba com o comando: 
