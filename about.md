@@ -14,5 +14,6 @@ Sou programador back-end e trabalho com Node JS, Rails, PHP, Java Web, PostgreSQ
 
 ### Entre em contato
 
-* E-mail: [carloshmbtn@yahoo.com.br](mailto:carloshmbtn@yahoo.com.br)
+* E-mail: [eu@carlos-cdb.top](mailto:eu@carlos-cdb.top)
 * PGP: [549A 47BB 7D79 81FD](https://carloshmbtn.github.io/carlos_0x7D7981FD_public.asc){:target="blank"}
+* XMPP: [xmpp://carlos@carlos-cdb.top](xmpp://carlos@carlos-cdb.top)
